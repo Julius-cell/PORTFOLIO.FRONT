@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   getEntry(): void {
-     this.contentful.getEntry('4YucwrfEbB7sOt2izYO0o7').subscribe(res => {
+     this.contentful.getEntry('7gP63r4MWSW7kCQBu7WgY6').subscribe(res => {
       console.log(res);
     });
   }

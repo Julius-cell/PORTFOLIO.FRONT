@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { ContentfulCollection, Entry } from 'contentful';
-import { BehaviorSubject, Observable, Subscriber, Subscription } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { ContentType } from '../enums/contentType';
 import { PgPage } from '../interfaces/pg-page';
 import { ContentfulNormalizerService } from './contentful-normalizer.service';
 import { ContentfulService } from './contentful.service';
+
+import { ContentfulCollection, Entry } from 'contentful';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,6 @@ export class PgPageService {
   getPageBy(slug: string): Observable<PgPage> {
     return this.getPageFromContentful(slug).pipe(
       map(res => {
-        console.log('from here');
         const entry = res?.items[0];
         return this.normalizePage(entry)
       })

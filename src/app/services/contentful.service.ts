@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-
-import * as contentful from 'contentful';
+import { from, Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
-import { ContentfulClientApi, ContentfulCollection, createClient, Entry } from 'contentful';
-import { from, Observable } from 'rxjs';
+
+import * as contentful from 'contentful';
+import { ContentfulCollection, Entry } from 'contentful';
 
 @Injectable({
   providedIn: 'root'

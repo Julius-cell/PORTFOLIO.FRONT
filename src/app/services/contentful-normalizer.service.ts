@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+
+import { Block, PgPage } from '../interfaces/pg-page';
+
 import { Entry } from 'contentful';
-import { PgPage } from '../interfaces/pg-page';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +33,21 @@ export class ContentfulNormalizerService {
       title,
       description,
       slug
+    }
+  }
+
+  normalizeBlock(contentfulBlock: Entry<any>): Block {
+    if (contentfulBlock && contentfulBlock.sys && contentfulBlock.sys.contentType) {
+      const { id, contentType } = contentfulBlock.sys;
+      const contentTypeId = contentType?.sys?.id;
+      const { fields } = contentfulBlock;
+      let block;
+      return {
+        id,
+        contentTypeId,
+        contentType: contentTypeId,
+        ...block,
+      };
     }
   }
 }

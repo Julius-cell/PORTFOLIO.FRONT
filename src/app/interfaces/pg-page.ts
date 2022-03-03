@@ -11,9 +11,9 @@ export interface PgPage {
   // info: Block;
 }
 
-// export interface Block {
-//   id: string;
-//   contentTypeId: string;
-//   contentType: string;
-//   fields?: any[];
-// }
+export interface Block {
+  id: string;
+  contentTypeId: string;
+  contentType: string;
+  fields?: any[];
+}

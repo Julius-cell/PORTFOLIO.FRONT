@@ -1,9 +1,9 @@
 export interface PgPage {
   id: string;
+  contentTypeId: string;
   title: string;
   description: string;
   slug: string;
-  // contentTypeId: string;
   // header: Block;
   // template?: Block;
   // blocks: Block[];

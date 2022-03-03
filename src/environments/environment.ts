@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  slugHome: '/home',
+  slugNotFound: '/not-found',
+  siteName: 'Julio Cid',
   contentful: {
     spaceId: 'c6bgjse847l9',
     accessToken: 'kWP-uU-xE8szFzuossnk1TXYyTFsWYa9U5uNrXAGpp0',

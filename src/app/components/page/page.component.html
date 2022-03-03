@@ -1,25 +1,33 @@
-<!-- <div class="flex flex-col h-full">
+<div class="flex flex-col h-full">
   <div class="flex flex-col">
-    <header
+    <!-- <header
       class="sticky top-0 z-50 bg-white"
-      *ngIf="
-        page && page.header && page.header.contentTypeId === ContentType.OR_HEADER && !isWebview
-      "
+      *ngIf="page && page.header"
     >
 
     </header>
-    <main *ngIf="page">
 
+    <main *ngIf="page">
+      <ng-container *ngIf="page.template">
+
+
+      </ng-container>
     </main>
-    <footer
-      *ngIf="
-        page && page.footer && page.footer.contentTypeId === ContentType.OR_FOOTER && !isWebview
-      "
+
+    <footer *ngIf="page && page.footer">
+
+    </footer> -->
+    <header
+      class="sticky top-0 z-50 bg-white"
     >
-      <or-footer [options]="page.footer"></or-footer>
-    </footer>
+      {{(page | async)?.title}}
+    </header>
+
+    <main *ngIf="page | async">
+      {{(page | async)?.description}}
+    </main>
+    
   </div>
-</div> -->
+</div>
 <h1 class="font-bold">Hola mundo</h1>
 <p class="italic">Holaaaa</p>
-

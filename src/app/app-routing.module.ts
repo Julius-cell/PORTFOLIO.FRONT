@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageComponent } from './components/page/page.component';
+import { AuthGuard } from './services/auth/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -10,12 +11,12 @@ const routes: Routes = [
   {
     path: ':first',
     component: PageComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: ':first/:second',
     component: PageComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

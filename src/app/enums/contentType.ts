@@ -1,3 +1,3 @@
 export enum ContentType {
-  PG_PAGE = 'pg-page',
+  PG_PAGE = 'pgPage',
 }

@@ -13,7 +13,6 @@ import { ContentfulCollection, Entry } from 'contentful';
   providedIn: 'root'
 })
 export class PgPageService {
-  // page = new BehaviorSubject<any>({});
 
   constructor(
     private contentfulService: ContentfulService,

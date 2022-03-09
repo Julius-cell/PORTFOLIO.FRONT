@@ -1,3 +1,11 @@
 export enum ContentType {
-  PG_PAGE = 'pgPage',
+  PAGE = 'page',
+  BANNER = 'banner',
+  BUTTON = 'button',
+  CARD = 'card',
+  FOOTER = 'footer',
+  HEADER = 'header',
+  IMAGE = 'image',
+  LINK = 'link',
+  SECTION = 'section',
 }

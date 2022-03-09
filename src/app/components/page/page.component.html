@@ -17,11 +17,9 @@
     <footer *ngIf="page && page.footer">
 
     </footer> -->
-    <header
-      class="sticky top-0 z-50 bg-white"
-    >
-      {{(page | async)?.title}}
-    </header>
+    <app-header
+      [header]="(page | async)?.header"
+    ></app-header>
 
     <main *ngIf="page | async">
       {{(page | async)?.description}}

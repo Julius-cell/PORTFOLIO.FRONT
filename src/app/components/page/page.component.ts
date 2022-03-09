@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 
-import { PgPage } from 'src/app/interfaces/pg-page';
-import { PgPageService } from 'src/app/services/pg-page.service';
+import { Page } from 'src/app/interfaces/page';
+import { PageService } from 'src/app/services/page.service';
 import { environment } from 'src/environments/environment';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
 })
 export class PageComponent implements OnInit {
-  page: Observable<PgPage>;
+  page: Observable<Page>;
 
   constructor(
-    private pgPageService: PgPageService,
+    private pageService: PageService,
     private route: ActivatedRoute,
   ) { }
 
@@ -41,7 +42,7 @@ export class PageComponent implements OnInit {
   }
 
   getPageBySlug(slug: string) {
-    this.page = this.pgPageService.getPageBy(slug);
+    this.page = this.pageService.getPageBy(slug);
   }
 
 }

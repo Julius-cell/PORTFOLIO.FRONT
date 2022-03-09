@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { Block, PgPage } from '../interfaces/pg-page';
+import { Block, Page } from '../interfaces/page';
+import { DefaultNormalizerSet } from '../sets/default-normalizer.set';
 
-import { Entry } from 'contentful';
+import { Asset, Entry } from 'contentful';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class ContentfulNormalizerService {
 
   constructor() { }
 
-  normalizePage(contentfulPage: Entry<any>): PgPage | undefined {
+  normalizePage(contentfulPage: Entry<any>): Page | undefined {
     if (!contentfulPage) {
       return;
     }
@@ -20,9 +22,9 @@ export class ContentfulNormalizerService {
       title,
       description,
       slug,
-      // header,
+      header,
       // template,
-      // footer,
+      footer,
       // blocks,
       // info,
     } = contentfulPage.fields;
@@ -32,22 +34,29 @@ export class ContentfulNormalizerService {
       contentTypeId,
       title,
       description,
-      slug
+      slug,
+      header: header ? this.normalizeBlock(header) : null,
+      footer: footer ? this.normalizeBlock(footer) : null
     }
   }
 
-  normalizeBlock(contentfulBlock: Entry<any>): Block {
+  normalizeBlock(contentfulBlock: Entry<any>): Block | any {
     if (contentfulBlock && contentfulBlock.sys && contentfulBlock.sys.contentType) {
-      const { id, contentType } = contentfulBlock.sys;
-      const contentTypeId = contentType?.sys?.id;
       const { fields } = contentfulBlock;
-      let block;
+      const block = this.normalizeDefault(fields);
       return {
-        id,
-        contentTypeId,
-        contentType: contentTypeId,
         ...block,
       };
     }
+  }
+
+  normalizeDefault(newBlockInProp: any): any {
+    const newBlockIn = { ...newBlockInProp };
+    for (const option of DefaultNormalizerSet.keys()) {
+      if (option in newBlockIn && newBlockIn[option].fields) {
+        newBlockIn[option] = this.normalizeDefault(newBlockIn[option].fields);
+      }
+    }
+    return newBlockIn;
   }
 }

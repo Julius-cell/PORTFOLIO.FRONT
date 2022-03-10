@@ -6,7 +6,9 @@
     ></app-header>
     
     <main *ngIf="page | async">
-      {{(page | async)?.description}}
+      <app-banner
+        [blocks]="(page | async)?.blocks"
+      ></app-banner>
     </main>
     
     <app-footer

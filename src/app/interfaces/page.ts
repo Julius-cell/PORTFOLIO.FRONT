@@ -6,21 +6,20 @@ export interface Page {
   slug: string;
   header: Header;
   // template?: Block;
-  // blocks: Block[];
+  blocks: (Banner | any)[];
   footer: Footer;
   // info: Block;
-}
-
-export interface Block {
-  id: string;
-  contentTypeId: string;
-  contentType: string;
-  fields?: any[];
 }
 
 export interface Header {
   logo: Image;
   categories: string[];
+}
+
+export interface Banner {
+  contentTypeId: string;
+  title: string;
+  subTitle: string;
 }
 
 export interface Footer {

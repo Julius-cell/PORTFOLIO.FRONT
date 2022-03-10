@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Block, Page } from '../interfaces/page';
+import { Page } from '../interfaces/page';
 import { AssetNormalizerSet, DefaultNormalizerSet, MapNormalizerSet } from '../sets/default-normalizer.set';
 
 import { Asset, Entry } from 'contentful';
@@ -23,9 +23,9 @@ export class ContentfulNormalizerService {
       description,
       slug,
       header,
+      blocks,
       // template,
       footer,
-      // blocks,
       // info,
     } = contentfulPage.fields;
     const contentTypeId = contentType?.sys?.id;
@@ -36,15 +36,19 @@ export class ContentfulNormalizerService {
       description,
       slug,
       header: header ? this.getFields(header) : null,
+      blocks: blocks ? blocks.map(contentfulBlock => this.getFields(contentfulBlock)) : [],
       footer: footer ? this.getFields(footer) : null
     }
   }
 
-  getFields(contentfulBlock: Entry<any>): Block | any {
+  getFields(contentfulBlock: Entry<any>): any {
     if (contentfulBlock && contentfulBlock.sys && contentfulBlock.sys.contentType) {
+      const { id, contentType } = contentfulBlock.sys;
+      const contentTypeId = contentType?.sys?.id;
       const { fields } = contentfulBlock;
       const { name, ...rest } = this.normalizeDefault(fields);
       return {
+        contentTypeId,
         ...rest,
       };
     }

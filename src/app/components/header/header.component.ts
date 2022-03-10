@@ -12,9 +12,7 @@ export class HeaderComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.header) {
-      console.log(this.header);
-      
+    if (this.header) {      
       const fields = this.header;
     }
   }

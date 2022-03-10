@@ -43,6 +43,7 @@ export class PageComponent implements OnInit {
 
   getPageBySlug(slug: string) {
     this.page = this.pageService.getPageBy(slug);
+    // this.page.subscribe(res => console.log(res));
   }
 
 }

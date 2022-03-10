@@ -19,18 +19,31 @@ export interface Block {
 }
 
 export interface Header {
-  name: string;
-  logo: string;
+  logo: Image;
   categories: string[];
 }
 
 export interface Footer {
-  name: string;
-  socialMediaLinks: string[];
+  socialMediaLinks: Image[];
 }
 
 export interface DocumentRichText {
   content: DocumentRichText[];
   data: {};
   nodeType: string;
+}
+
+export interface Image {
+  actionType: string;
+  actionUrl: string;
+  desktopImage: Asset;
+  mobileImage: Asset;
+}
+
+export interface Asset {
+  alt: string;
+  contentTYPE: string;
+  id: string;
+  title: string;
+  url: string;
 }

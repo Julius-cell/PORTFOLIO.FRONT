@@ -1,4 +1,8 @@
 <div *ngIf="header">
-    <p *ngFor="let categorie of header?.categories">{{categorie}}</p>
-    <p>hola</p>
+    <div class="w-40">
+        <img src="{{header.logo.desktopImage.url}}" alt="{{header.logo.desktopImage.alt}}">
+    </div>
+    <div *ngFor="let categorie of header?.categories">
+        <p>{{categorie}}</p>
+    </div>
 </div>

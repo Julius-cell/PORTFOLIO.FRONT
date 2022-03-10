@@ -10,9 +10,11 @@ export class HeaderComponent implements OnChanges {
   @Input() header: Header;
 
   constructor() { }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.header) {
       console.log(this.header);
+      
       const fields = this.header;
     }
   }

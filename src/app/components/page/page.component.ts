@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Page } from 'src/app/interfaces/page';
+import { Banner, Page, Section } from 'src/app/interfaces/page';
 import { PageService } from 'src/app/services/page.service';
 import { environment } from 'src/environments/environment';
+import { ContentType } from 'src/app/enums/contentType';
 
 import { Observable } from 'rxjs';
 
@@ -13,6 +14,10 @@ import { Observable } from 'rxjs';
 })
 export class PageComponent implements OnInit {
   page: Observable<Page>;
+  banner: Banner[];
+  section: Section[];
+
+  ContentType = ContentType; 
 
   constructor(
     private pageService: PageService,
@@ -43,7 +48,17 @@ export class PageComponent implements OnInit {
 
   getPageBySlug(slug: string) {
     this.page = this.pageService.getPageBy(slug);
-    this.page.subscribe(res => console.log(res));
+  }
+
+  filterBlocksPage(): void {
+    this.page.subscribe(page => this.filter(page.blocks));
+  }
+
+  filter(blocks: any[]): void {
+    if (blocks.length) {
+      this.banner = blocks.filter(block => block.contentTypeId === ContentType.BANNER)
+      this.section = blocks.filter(block => block.contentTypeId === ContentType.SECTION)
+    }
   }
 
 }

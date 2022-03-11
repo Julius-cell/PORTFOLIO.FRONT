@@ -6,9 +6,8 @@ export interface Page {
   slug: string;
   header: Header;
   // template?: Block;
-  blocks: (Banner | any)[];
+  blocks?: any[];
   footer: Footer;
-  // info: Block;
 }
 
 export interface Header {
@@ -20,6 +19,17 @@ export interface Banner {
   contentTypeId: string;
   title: string;
   subTitle: string;
+}
+
+export interface Section {
+  contentTypeId: string;
+  title?: string;
+  subTitle?: string;
+  columns: string;
+  gapMobile?: number;
+  gapDesktop?: number;
+  bgColor?: string;
+  blocks: any[];
 }
 
 export interface Footer {

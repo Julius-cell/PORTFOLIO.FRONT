@@ -7,13 +7,13 @@ import { Banner } from 'src/app/interfaces/page';
   templateUrl: './banner.component.html',
 })
 export class BannerComponent implements OnChanges {
-  @Input() blocks: any[];
+  @Input() banner: Banner[];
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.blocks) {
-      const fields = this.blocks;
+    if (this.banner) {
+      const fields = this.banner;
     }
   }
 }

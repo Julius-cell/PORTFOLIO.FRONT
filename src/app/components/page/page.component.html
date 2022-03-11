@@ -6,9 +6,20 @@
     ></app-header>
     
     <main *ngIf="page | async">
-      <app-banner
-        [blocks]="(page | async)?.blocks"
-      ></app-banner>
+
+      <ng-container *ngFor="let block of (page | async)?.blocks" [ngSwitch]="block?.contentTypeId">
+        <ng-container *ngSwitchCase="ContentType.BANNER">
+          <app-banner
+            [banner]="banner"
+          ></app-banner>
+        </ng-container>
+        <ng-container *ngSwitchCase="ContentType.SECTION">
+          <app-section
+            [section]="section"
+          ></app-section>
+        </ng-container>
+      </ng-container>
+      
     </main>
     
     <app-footer

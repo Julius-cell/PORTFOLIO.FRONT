@@ -14,8 +14,6 @@ import { Observable } from 'rxjs';
 })
 export class PageComponent implements OnInit {
   page: Observable<Page>;
-  banner: Banner[];
-  section: Section[];
 
   ContentType = ContentType; 
 
@@ -48,17 +46,6 @@ export class PageComponent implements OnInit {
 
   getPageBySlug(slug: string) {
     this.page = this.pageService.getPageBy(slug);
-  }
-
-  filterBlocksPage(): void {
-    this.page.subscribe(page => this.filter(page.blocks));
-  }
-
-  filter(blocks: any[]): void {
-    if (blocks.length) {
-      this.banner = blocks.filter(block => block.contentTypeId === ContentType.BANNER)
-      this.section = blocks.filter(block => block.contentTypeId === ContentType.SECTION)
-    }
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Banner } from 'src/app/interfaces/page';
 
@@ -6,14 +6,12 @@ import { Banner } from 'src/app/interfaces/page';
   selector: 'app-banner',
   templateUrl: './banner.component.html',
 })
-export class BannerComponent implements OnChanges {
+export class BannerComponent implements OnInit {
   @Input() banner: Banner[];
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.banner) {
-      const fields = this.banner;
-    }
+  ngOnInit(): void {
+    console.log(this.banner);
   }
 }

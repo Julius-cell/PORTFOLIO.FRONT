@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Section } from 'src/app/interfaces/page';
 
@@ -6,15 +6,13 @@ import { Section } from 'src/app/interfaces/page';
   selector: 'app-section',
   templateUrl: './section.component.html',
 })
-export class SectionComponent implements OnChanges {
-  @Input() section: Section[];
+export class SectionComponent implements OnInit {
+  @Input() section: Section;
 
   constructor() { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.section) {
-      const fields = this.section;
-    }
+  
+  ngOnInit(): void {
+    console.log(this.section);
   }
 
 }

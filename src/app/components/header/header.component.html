@@ -1,8 +1,10 @@
-<div *ngIf="header">
+<div *ngIf="header" class="flex lg:py-20 lg:px-20 justify-between">
     <div class="w-40">
         <img src="{{header.logo.desktopImage.url}}" alt="{{header.logo.desktopImage.alt}}">
     </div>
-    <div *ngFor="let categorie of header?.categories">
-        <p>{{categorie}}</p>
+    <div class="flex">
+        <div *ngFor="let categorie of header?.categories" class="m-auto lg:mx-30">
+            <p>{{categorie}}</p>
+        </div>
     </div>
 </div>

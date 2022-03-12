@@ -1,3 +1,18 @@
 <section>
     <h1 *ngIf="section.title">{{section.title}}</h1>
+    <div class="grid grid-flow-cols-{{section.columns}}">
+        <div 
+            *ngFor="let block of section.blocks; let i = index"
+            >
+            <p>{{block.title}}</p>
+        </div>
+    </div>
+    <!-- <div class="flex">
+        <div>
+            <p>holaaaa</p>
+        </div>
+        <div>
+            <p>chaoooooo</p>
+        </div>
+    </div> -->
 </section>

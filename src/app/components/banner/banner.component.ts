@@ -7,7 +7,7 @@ import { Banner } from 'src/app/interfaces/page';
   templateUrl: './banner.component.html',
 })
 export class BannerComponent implements OnInit {
-  @Input() banner: Banner[];
+  @Input() banner: Banner;
 
   constructor() { }
 

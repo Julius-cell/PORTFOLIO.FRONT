@@ -6,4 +6,5 @@ export interface Swiper {
     slidesPerViewMobile: number;
     spaceBetween: string;
     isFullScreen: boolean;
+    height: string;
 }

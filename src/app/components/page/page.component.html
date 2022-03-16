@@ -1,9 +1,11 @@
 <div class="flex flex-col h-full">
   <div class="flex flex-col">
-    
-    <app-header
-      [header]="(page | async)?.header"
-    ></app-header>
+  
+    <div [ngStyle]="{'z-index': 10}">
+      <app-header
+        [header]="(page | async)?.header"
+      ></app-header>
+    </div>
     
     <main *ngIf="page | async">
 

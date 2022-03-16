@@ -5,6 +5,11 @@ import { Header } from './header.interface';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
+  styles: [`
+    .header {
+      background-color: rgba(255,255,255,0);
+    }
+  `]
 })
 export class HeaderComponent implements OnChanges {
   @Input() header: Header;

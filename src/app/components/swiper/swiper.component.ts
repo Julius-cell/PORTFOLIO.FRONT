@@ -13,5 +13,21 @@ export class SwiperComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.swiper);
+    this.setHeight();
+  }
+
+  setHeight(): string {
+    return this.swiper.isFullScreen ? '100vh' : `${this.swiper.height}px`;
+  }
+
+  setMarginTop(): string {
+    return this.swiper.isFullScreen ? '-80px' : `0px`;
+  }
+
+  setStyles(): any {
+    return {
+      height: this.setHeight(),
+      marginTop: this.setMarginTop(),
+    }
   }
 }

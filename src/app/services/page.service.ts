@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { ContentType } from '../enums/contentType';
-import { Page } from '../interfaces/page';
 import { ContentfulNormalizerService } from './contentful-normalizer.service';
 import { ContentfulService } from './contentful.service';
+import { Page } from '../components/page/page.interface';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';

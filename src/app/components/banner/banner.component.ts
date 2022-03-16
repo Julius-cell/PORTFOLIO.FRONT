@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Banner } from 'src/app/interfaces/page';
+import { Banner } from './banner.interface';
 
 @Component({
   selector: 'app-banner',

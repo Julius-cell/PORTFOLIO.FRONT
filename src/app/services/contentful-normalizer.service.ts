@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Page } from '../interfaces/page';
 import { AssetNormalizerSet, DefaultNormalizerSet, MapNormalizerSet } from '../sets/default-normalizer.set';
+import { Page } from '../components/page/page.interface';
 
 import { Asset, Entry } from 'contentful';
 

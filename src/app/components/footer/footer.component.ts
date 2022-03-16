@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { Footer } from 'src/app/interfaces/page';
+import { Footer } from './footer.interface';
 
 @Component({
   selector: 'app-footer',

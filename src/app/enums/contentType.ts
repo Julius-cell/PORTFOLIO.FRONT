@@ -8,4 +8,5 @@ export enum ContentType {
   IMAGE = 'image',
   LINK = 'link',
   SECTION = 'section',
+  SWIPER = 'swiper',
 }

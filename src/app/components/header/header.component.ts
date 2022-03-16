@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
-import { Header } from 'src/app/interfaces/page';
+import { Header } from './header.interface';
 
 @Component({
   selector: 'app-header',

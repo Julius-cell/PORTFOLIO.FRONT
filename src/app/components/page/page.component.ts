@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Banner, Page, Section } from 'src/app/interfaces/page';
+import { Page } from './page.interface';
 import { PageService } from 'src/app/services/page.service';
 import { environment } from 'src/environments/environment';
 import { ContentType } from 'src/app/enums/contentType';
@@ -46,6 +46,7 @@ export class PageComponent implements OnInit {
 
   getPageBySlug(slug: string) {
     this.page = this.pageService.getPageBy(slug);
+    this.page.subscribe(res => console.log(res));
   }
 
 }

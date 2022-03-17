@@ -5,6 +5,13 @@ import { Swiper } from './swiper.interface';
 @Component({
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
+  styles: [`
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  `]
 })
 export class SwiperComponent implements OnInit {
   @Input() swiper: Swiper;
@@ -28,6 +35,7 @@ export class SwiperComponent implements OnInit {
     return {
       height: this.setHeight(),
       marginTop: this.setMarginTop(),
+      width: '100%'
     }
   }
 }

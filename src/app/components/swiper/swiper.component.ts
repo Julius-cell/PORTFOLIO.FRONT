@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Color } from 'src/app/enums/color';
 
+import { Icon } from '../icon/icon.enum';
 import { Swiper } from './swiper.interface';
 
 @Component({
@@ -15,6 +17,9 @@ import { Swiper } from './swiper.interface';
 })
 export class SwiperComponent implements OnInit {
   @Input() swiper: Swiper;
+
+  Icon = Icon;
+  Color = Color;
 
   constructor() { }
 

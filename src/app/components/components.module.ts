@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { SectionComponent } from './section/section.component';
 import { SwiperComponent } from './swiper/swiper.component';
+import { IconComponent } from './icon/icon.component';
 
 
 
@@ -16,7 +17,8 @@ import { SwiperComponent } from './swiper/swiper.component';
     FooterComponent,
     BannerComponent,
     SectionComponent,
-    SwiperComponent
+    SwiperComponent,
+    IconComponent
   ],
   imports: [
     CommonModule

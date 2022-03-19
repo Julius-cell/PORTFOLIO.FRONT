@@ -1,9 +1,17 @@
 <section>
-    <div [style]="setStyles()" >
+    <app-icon 
+        class="icon-left" 
+        [icon]="Icon.CHEVRON_LEFT" 
+        [color]="Color.WHITE" 
+        [ngClass]="{'hide-icon': !showIconNavigators()}"
+    ></app-icon>
+    <app-icon 
+        class="icon-right" 
+        [icon]="Icon.CHEVRON_RIGHT" 
+        [color]="Color.WHITE" 
+        [ngClass]="{'hide-icon': !showIconNavigators()}"
+    ></app-icon>
+    <div [style]="setStyles()">
         <img src="{{swiper.slides[0].bgImage.desktopImage.url}}" alt="">
     </div>
-    <app-icon
-        [icon]="Icon.CHEVRON_LEFT"
-        [color]="Color.BLACK"
-    ></app-icon>
 </section>

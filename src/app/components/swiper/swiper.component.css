@@ -1,0 +1,28 @@
+section {
+    position: relative;
+}
+
+.icon-left, .icon-right {
+    position: absolute;
+    cursor: pointer;
+    top: calc(50% - 10px);
+}
+
+.icon-right {
+    right: 0;
+    padding-right: 15px;
+}
+
+.icon-left {
+    padding-left: 15px;
+}
+
+img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+.hide-icon {
+    display: none;
+}

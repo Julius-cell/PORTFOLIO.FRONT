@@ -1,19 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color } from 'src/app/enums/color';
 
+import { Color } from 'src/app/enums/color';
 import { Icon } from '../icon/icon.enum';
 import { Swiper } from './swiper.interface';
 
 @Component({
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
-  styles: [`
-    img {
-      width: inherit;
-      height: inherit;
-      object-fit: cover;
-    }
-  `]
+  styleUrls: ['./swiper.component.css']
 })
 export class SwiperComponent implements OnInit {
   @Input() swiper: Swiper;
@@ -25,7 +19,7 @@ export class SwiperComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.swiper);
-    this.setHeight();
+    // this.setHeight();
   }
 
   setHeight(): string {
@@ -36,11 +30,15 @@ export class SwiperComponent implements OnInit {
     return this.swiper.isFullScreen ? '-80px' : `0px`;
   }
 
+  showIconNavigators(): boolean {
+    return this.swiper.slides.length > 1;
+  }
+
   setStyles(): any {
     return {
       height: this.setHeight(),
       marginTop: this.setMarginTop(),
-      width: '100%'
+      width: '100%',
     }
   }
 }

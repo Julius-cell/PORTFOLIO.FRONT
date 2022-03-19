@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="icon">
-    <!-- CHEVRON_LEFT  -->
+    <!-- CHEVRON_RIGHT  -->
     <svg 
-        *ngSwitchCase="Icon.CHEVRON_LEFT" 
+        *ngSwitchCase="Icon.CHEVRON_RIGHT" 
         [attr.height]="height"
         [attr.width]="width"
         [style.color]="color"
@@ -11,4 +11,15 @@
         <title>Chevron Forward</title>
         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M184 112l144 144-144 144"/>
     </svg>
+    <!-- CHEVRON_LEFT  -->
+    <svg 
+        *ngSwitchCase="Icon.CHEVRON_LEFT" 
+        [attr.height]="height"
+        [attr.width]="width"
+        [style.color]="color"
+        xmlns="http://www.w3.org/2000/svg" 
+        class="ionicon" 
+        viewBox="0 0 512 512">
+        <title>Chevron Back</title>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M328 112L184 256l144 144"/></svg>
 </ng-container>

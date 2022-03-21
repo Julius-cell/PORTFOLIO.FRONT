@@ -7,4 +7,5 @@ export interface Swiper {
     spaceBetween: string;
     isFullScreen: boolean;
     height: string;
+    indicators: boolean;
 }

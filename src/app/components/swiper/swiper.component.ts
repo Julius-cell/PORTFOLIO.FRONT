@@ -14,12 +14,12 @@ export class SwiperComponent implements OnInit {
 
   Icon = Icon;
   Color = Color;
+  selectedIndex = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.swiper);
-    // this.setHeight();
   }
 
   setHeight(): string {
@@ -34,11 +34,31 @@ export class SwiperComponent implements OnInit {
     return this.swiper.slides.length > 1;
   }
 
+  showLeftIcon(): boolean {
+    return this.selectedIndex === 0 || !this.showIconNavigators();
+  }
+  
+  showRightIcon(): boolean {
+    return this.selectedIndex === this.swiper.slides.length - 1 || !this.showIconNavigators();
+  }
+
   setStyles(): any {
     return {
       height: this.setHeight(),
       marginTop: this.setMarginTop(),
       width: '100%',
     }
+  }
+
+  selectImage(index: number): void {
+    this.selectedIndex = index;
+  }
+
+  nextImage(): void {
+    this.selectedIndex = this.selectedIndex + 1;
+  }
+  
+  prevImage(): void {
+    this.selectedIndex = this.selectedIndex - 1;
   }
 }

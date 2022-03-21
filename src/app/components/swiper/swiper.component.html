@@ -3,15 +3,29 @@
         class="icon-left" 
         [icon]="Icon.CHEVRON_LEFT" 
         [color]="Color.WHITE" 
-        [ngClass]="{'hide-icon': !showIconNavigators()}"
+        [ngClass]="{'hide-icon': showLeftIcon()}"
+        (click)="prevImage()"
     ></app-icon>
     <app-icon 
         class="icon-right" 
         [icon]="Icon.CHEVRON_RIGHT" 
         [color]="Color.WHITE" 
-        [ngClass]="{'hide-icon': !showIconNavigators()}"
+        [ngClass]="{'hide-icon': showRightIcon()}"
+        (click)="nextImage()"
     ></app-icon>
-    <div [style]="setStyles()">
-        <img src="{{swiper.slides[0].bgImage.desktopImage.url}}" alt="">
+    <div class="carrousel-container" [style]="setStyles()">
+        <img 
+            *ngFor="let image of swiper.slides; let i=index"
+            src="{{image.bgImage.desktopImage.url}}" 
+            alt="{{image.bgImage.desktopImage.title}}"
+            [ngClass]="{'img-active': selectedIndex === i}"
+        >
+        <div *ngIf="swiper.indicators" class="dots">
+            <div *ngFor="let dot of swiper.slides; let i=index"
+                class="dot"
+                [ngClass]="{'active-dot': selectedIndex === i}"
+                (click)="selectImage(i)">
+            </div>
+        </div>
     </div>
 </section>

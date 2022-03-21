@@ -1,11 +1,50 @@
-section {
-    position: relative;
-}
-
 .icon-left, .icon-right {
     position: absolute;
     cursor: pointer;
-    top: calc(50% - 10px);
+    z-index: 1;
+}
+
+section {
+    display: flex;
+    align-items: center;
+}
+
+.carrousel-container {
+    position: relative;
+}
+
+.carrousel-container img {
+    display: none;
+}
+
+.carrousel-container img.img-active {
+    display: block;
+}
+
+.dots {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: opacity 0.6s ease;
+    opacity: 0.5;
+}
+
+.dot:hover,
+.active-dot {
+    opacity: 1;
 }
 
 .icon-right {
@@ -20,7 +59,6 @@ section {
 img {
     width: inherit;
     height: inherit;
-    object-fit: cover;
 }
 
 .hide-icon {

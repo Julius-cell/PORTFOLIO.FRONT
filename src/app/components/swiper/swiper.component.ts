@@ -19,7 +19,7 @@ export class SwiperComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.swiper);
+    // console.log(this.swiper);
   }
 
   setHeight(): string {

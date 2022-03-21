@@ -64,3 +64,13 @@ img {
 .hide-icon {
     display: none;
 }
+
+.fade {
+    animation: fadeKey 300ms ease;
+}
+
+@keyframes fadeKey {
+    0% { opacity: 0.2; }
+    25% { opacity: 0.5; }
+    100% { opacity: 1; }
+}

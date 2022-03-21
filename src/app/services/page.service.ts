@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ContentType } from '../enums/contentType';
+import { ContentType } from '../shared/enums/contentType';
 import { ContentfulNormalizerService } from './contentful-normalizer.service';
 import { ContentfulService } from './contentful.service';
 import { Page } from '../components/page/page.interface';

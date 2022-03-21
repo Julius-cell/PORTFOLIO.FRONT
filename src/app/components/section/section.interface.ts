@@ -7,4 +7,7 @@ export interface Section {
     gapDesktop?: number;
     bgColor?: string;
     blocks: any[];
+    padding?: string;
+    marginTop?: string;
+    marginBottom?: string;
 }

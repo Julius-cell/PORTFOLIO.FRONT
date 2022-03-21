@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Color } from 'src/app/enums/color';
+import { Color } from 'src/app/shared/enums/color';
 import { Icon } from '../icon/icon.enum';
 import { Swiper } from './swiper.interface';
 

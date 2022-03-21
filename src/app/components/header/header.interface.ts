@@ -1,4 +1,4 @@
-import { Image } from "src/app/interfaces/resources";
+import { Image } from "src/app/shared/interfaces/resources";
 
 export interface Header {
     logo: Image;

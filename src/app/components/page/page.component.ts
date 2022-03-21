@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Page } from './page.interface';
 import { PageService } from 'src/app/services/page.service';
 import { environment } from 'src/environments/environment';
-import { ContentType } from 'src/app/enums/contentType';
+import { ContentType } from 'src/app/shared/enums/contentType';
 
 import { Observable } from 'rxjs';
 

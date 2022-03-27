@@ -5,6 +5,7 @@
     <div [style]="setGrid()">
         <div *ngFor="let block of section.blocks; let i = index">
             <p>{{block.title}}</p>
+            <app-rich-text [richText]="block.content"></app-rich-text>
         </div>
     </div>
 </section>

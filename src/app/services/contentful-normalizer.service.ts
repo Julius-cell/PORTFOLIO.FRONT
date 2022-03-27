@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { AssetNormalizerSet, DefaultNormalizerSet, MapNormalizerSet } from '../sets/default-normalizer.set';
 import { Page } from '../components/page/page.interface';
+import { DocumentRichText } from '../shared/interfaces/resources';
 
 import { Asset, Entry } from 'contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 
 @Injectable({
@@ -26,7 +28,6 @@ export class ContentfulNormalizerService {
       blocks,
       // template,
       footer,
-      // info,
     } = contentfulPage.fields;
     const contentTypeId = contentType?.sys?.id;
     return {
@@ -84,6 +85,11 @@ export class ContentfulNormalizerService {
       }
     }
 
+    // RICH TEXT
+    if (newBlockIn.content) {
+      newBlockIn.content = this.normalizeRichText(newBlockIn.content);
+    }
+    
     return newBlockIn;
   }
 
@@ -100,5 +106,10 @@ export class ContentfulNormalizerService {
       };
     }
     return contentfulAsset;
+  }
+
+  normalizeRichText(documentAsset: DocumentRichText): string {
+    const docString = documentToHtmlString(documentAsset as any);
+    return docString;
   }
 }

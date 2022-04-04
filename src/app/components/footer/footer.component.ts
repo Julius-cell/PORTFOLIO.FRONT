@@ -5,6 +5,7 @@ import { Footer } from './footer.interface';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnChanges {
   @Input() footer: Footer;
@@ -13,6 +14,7 @@ export class FooterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.footer) {
+      console.log(this.footer);
       const fields = this.footer;
     }
   }

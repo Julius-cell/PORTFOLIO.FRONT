@@ -1,37 +1,25 @@
-<div class="flex flex-col h-full">
-  <div class="flex flex-col">
-  
-    <div [ngStyle]="{'z-index': 10}">
-      <app-header
-        [header]="(page | async)?.header"
-      ></app-header>
-    </div>
-    
-    <main *ngIf="page | async">
+<div class="page">
 
-      <ng-container *ngFor="let block of (page | async)?.blocks" [ngSwitch]="block?.contentTypeId">
-        <ng-container *ngSwitchCase="ContentType.SWIPER">
-          <app-swiper
-            [swiper]="block"
-          ></app-swiper>
-        </ng-container>
-        <ng-container *ngSwitchCase="ContentType.BANNER">
-          <app-banner
-            [banner]="block"
-          ></app-banner>
-        </ng-container>
-        <ng-container *ngSwitchCase="ContentType.SECTION">
-          <app-section
-            [section]="block"
-          ></app-section>
-        </ng-container>
-      </ng-container>
-      
-    </main>
-    
-    <app-footer
-      [footer]="(page | async)?.footer"
-    ></app-footer>
-
+  <div [ngStyle]="{'z-index': 10}">
+    <app-header [header]="(page | async)?.header"></app-header>
   </div>
+
+  <main *ngIf="page | async">
+
+    <ng-container *ngFor="let block of (page | async)?.blocks" [ngSwitch]="block?.contentTypeId">
+      <ng-container *ngSwitchCase="ContentType.SWIPER">
+        <app-swiper [swiper]="block"></app-swiper>
+      </ng-container>
+      <ng-container *ngSwitchCase="ContentType.BANNER">
+        <app-banner [banner]="block"></app-banner>
+      </ng-container>
+      <ng-container *ngSwitchCase="ContentType.SECTION">
+        <app-section [section]="block"></app-section>
+      </ng-container>
+    </ng-container>
+
+  </main>
+
+  <app-footer [footer]="(page | async)?.footer"></app-footer>
+
 </div>

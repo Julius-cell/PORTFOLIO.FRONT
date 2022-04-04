@@ -1,0 +1,22 @@
+.footer {
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+img {
+    width: 30px;
+}
+
+.mid-section,
+.left-section,
+.right-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid-section img {
+    width: 30px;
+}

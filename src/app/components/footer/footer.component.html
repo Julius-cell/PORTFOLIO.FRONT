@@ -1,8 +1,17 @@
-<div *ngIf="footer">
-    <div *ngFor="let categorie of footer?.socialMediaLinks">
-        <p>{{categorie.desktopImage.title}}</p>
-        <div class="w-40">
+<div *ngIf="footer" class="footer">
+    <div class="left-section">
+        <div>
+            <img src="{{footer.logo.desktopImage.url}}" alt="{{footer.logo.desktopImage.alt}}">
+        </div>
+    </div>
+
+    <div class="mid-section">
+        <div *ngFor="let categorie of footer?.socialMediaLinks">
             <img src="{{categorie.desktopImage.url}}" alt="{{categorie.desktopImage.alt}}">
         </div>
+    </div>
+
+    <div class="right-section">
+        3
     </div>
 </div>

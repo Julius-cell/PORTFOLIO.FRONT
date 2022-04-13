@@ -11,6 +11,7 @@ import { IconComponent } from './icon/icon.component';
 import { RichTextComponent } from './rich-text/rich-text.component';
 
 import { PipeModule } from '../pipes/pipe.module';
+import { ImageComponent } from './image/image.component';
 
 
 
@@ -24,6 +25,7 @@ import { PipeModule } from '../pipes/pipe.module';
     SwiperComponent,
     IconComponent,
     RichTextComponent,
+    ImageComponent,
   ],
   imports: [
     CommonModule,

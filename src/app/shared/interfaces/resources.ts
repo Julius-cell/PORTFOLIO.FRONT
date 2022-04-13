@@ -4,13 +4,6 @@ export interface DocumentRichText {
   nodeType: string;
 }
 
-export interface Image {
-  actionType?: string;
-  actionUrl?: string;
-  desktopImage?: Asset;
-  mobileImage?: Asset;
-}
-
 export interface Asset {
   alt?: string;
   contentType: string;

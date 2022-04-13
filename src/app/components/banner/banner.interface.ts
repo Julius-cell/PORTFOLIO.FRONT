@@ -1,4 +1,4 @@
-import { Image } from "src/app/shared/interfaces/resources";
+import { Image } from "../image/image.interface";
 
 export interface Banner {
     contentTypeId: string;

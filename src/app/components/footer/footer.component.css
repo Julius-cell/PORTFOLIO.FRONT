@@ -5,18 +5,10 @@
     
 }
 
-img {
-    width: 30px;
-}
-
 .mid-section,
 .left-section,
 .right-section {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.mid-section img {
-    width: 30px;
 }

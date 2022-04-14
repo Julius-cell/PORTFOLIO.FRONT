@@ -1,5 +1,5 @@
-import { Footer } from "../footer/footer.interface";
-import { Header } from "../header/header.interface";
+import { Footer } from "../molecules/footer/footer.interface";
+import { Header } from "../molecules/header/header.interface";
 
 export interface Page {
     id: string;

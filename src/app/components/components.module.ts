@@ -1,35 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AtomsModule } from './atoms/atoms.module';
+import { MoleculesModule } from './molecules/molecules.module';
+import { OrganismsModule } from './organisms/organisms.module';
+
 import { PageComponent } from './page/page.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BannerComponent } from './banner/banner.component';
-import { SectionComponent } from './section/section.component';
-import { SwiperComponent } from './swiper/swiper.component';
-import { IconComponent } from './icon/icon.component';
-import { RichTextComponent } from './rich-text/rich-text.component';
-
-import { PipeModule } from '../pipes/pipe.module';
-import { ImageComponent } from './image/image.component';
-
-
 
 @NgModule({
   declarations: [
-    PageComponent,
-    HeaderComponent,
-    FooterComponent,
-    BannerComponent,
-    SectionComponent,
-    SwiperComponent,
-    IconComponent,
-    RichTextComponent,
-    ImageComponent,
+    PageComponent
   ],
   imports: [
     CommonModule,
-    PipeModule
+    MoleculesModule,
+    OrganismsModule,
   ],
   exports: [
     PageComponent

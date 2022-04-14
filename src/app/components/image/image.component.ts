@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Image } from './image.interface';
 
 @Component({
@@ -9,9 +10,13 @@ import { Image } from './image.interface';
 export class ImageComponent implements OnInit {
   @Input() image: Image;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  handleClick(): void {
+    window.open(this.image.actionUrl, this.image.actionType);
   }
 
 }

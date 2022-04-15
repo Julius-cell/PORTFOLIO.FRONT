@@ -1,6 +1,7 @@
 export const DefaultNormalizerSet = new Set<string>([
     'logo',
-    'bgImage'
+    'bgImage',
+    'actionButton'
 ]);
 
 export const MapNormalizerSet = new Set<string>([
@@ -12,4 +13,5 @@ export const MapNormalizerSet = new Set<string>([
 export const AssetNormalizerSet = new Set<string>([
     'desktopImage',
     'mobileImage',
+    'icon'
 ]);

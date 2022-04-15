@@ -3,9 +3,12 @@
         <h1>{{section.title}}</h1>
     </div>
     <div [style]="setGrid()">
-        <div *ngFor="let block of section.blocks; let i = index">
-            <p>{{block.title}}</p>
-            <app-rich-text [richText]="block.content"></app-rich-text>
+        <div *ngFor="let block of section.blocks; let i = index"
+            [ngSwitch]="block.contentTypeId">
+            <app-card 
+                *ngSwitchCase="ContentType.CARD"
+                [card]="block">
+            </app-card>
         </div>
     </div>
 </section>

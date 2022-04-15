@@ -5,12 +5,14 @@ import { IconComponent } from './icon/icon.component';
 import { RichTextComponent } from './rich-text/rich-text.component';
 import { ImageComponent } from './image/image.component';
 import { PipeModule } from 'src/app/pipes/pipe.module';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     IconComponent,
     RichTextComponent,
     ImageComponent,
+    ButtonComponent,
   ],
   imports: [
     CommonModule,

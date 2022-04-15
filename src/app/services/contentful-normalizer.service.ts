@@ -78,6 +78,7 @@ export class ContentfulNormalizerService {
         const blockArray = newBlockIn[option];
         newBlockIn[option] = blockArray.reduce((result, elem) => {
           if (elem?.sys?.contentType) {
+            elem.fields.contentTypeId = elem.sys.contentType.sys.id;
             result.push(this.normalizeDefault(elem.fields));
           }
           return result;

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { ContentType } from 'src/app/shared/enums/contentType';
 import { getSizes } from 'src/app/shared/utils/get-sizes';
 import { Section } from './section.interface';
 
@@ -11,10 +12,12 @@ import { Section } from './section.interface';
 export class SectionComponent implements OnInit {
   @Input() section: Section;
 
+  ContentType = ContentType;
+
   constructor() { }
   
   ngOnInit(): void {
-    // console.log(this.section);
+    console.log(this.section);
   }
 
   setSpacing(): any {

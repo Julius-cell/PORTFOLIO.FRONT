@@ -7,6 +7,7 @@ import { BannerComponent } from './banner/banner.component';
 import { SectionComponent } from './section/section.component';
 import { SwiperComponent } from './swiper/swiper.component';
 import { AtomsModule } from '../atoms/atoms.module';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AtomsModule } from '../atoms/atoms.module';
     FooterComponent,
     BannerComponent,
     SectionComponent,
-    SwiperComponent
+    SwiperComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

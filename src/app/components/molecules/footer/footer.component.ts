@@ -14,7 +14,7 @@ export class FooterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.footer) {
-      console.log(this.footer);
+      // console.log(this.footer);
       const fields = this.footer;
     }
   }

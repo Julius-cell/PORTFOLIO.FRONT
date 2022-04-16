@@ -1,1 +1,9 @@
-<p>button works!</p>
+<button
+    [class.btn-primary]="button?.buttonType === buttonType?.PRIMARY"
+    (click)="handleClick()"
+>
+    <span>{{button?.label}}</span>
+    <!-- <span>
+        <app-icon [icon]="button?.icon"></app-icon>
+    </span> -->
+</button>

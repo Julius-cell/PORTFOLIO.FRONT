@@ -1,9 +1,9 @@
-import { Image } from "../image/image.interface";
+import { Icon } from "../icon/icon.enum";
 
 export interface Button {
     name: string;
     label: string;
-    icon?: Image;
+    icon?: Icon;
     buttonType: string;
     actionType?: string;
     actionUrl?: string;

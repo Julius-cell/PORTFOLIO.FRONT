@@ -1,6 +1,6 @@
 <section [style]="setSpacing()">
-    <div class="title">
-        <h1>{{section.title}}</h1>
+    <div class="title" *ngIf="section?.title">
+        <h1>{{section?.title}}</h1>
     </div>
     <div [style]="setGrid()">
         <div *ngFor="let block of section.blocks; let i = index"

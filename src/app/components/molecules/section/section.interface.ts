@@ -10,4 +10,5 @@ export interface Section {
     padding?: string;
     marginTop?: string;
     marginBottom?: string;
+    contentPosition?: string;
 }

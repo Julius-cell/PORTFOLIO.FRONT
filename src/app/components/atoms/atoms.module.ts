@@ -22,6 +22,7 @@ import { ButtonComponent } from './button/button.component';
     IconComponent,
     RichTextComponent,
     ImageComponent,
+    ButtonComponent,
   ]
 })
 export class AtomsModule { }

@@ -16,7 +16,7 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.button);
+    // console.log(this.button);
   }
 
   handleClick(): void {

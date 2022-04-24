@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Link } from './link.interface';
 
@@ -9,17 +10,19 @@ import { Link } from './link.interface';
 })
 export class LinkComponent implements OnInit {
   @Input() link: Link;
-  @Output() handleClick = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
+    // console.log(this.link);
   }
 
   onClick(event: MouseEvent): void {
-    // event.preventDefault();
-    // this.handleClick.emit(true);
-    this.router.navigateByUrl(this.link.actionUrl);
+    if (this.link.actionType === 'navigate') {
+      event.preventDefault();
+      this.viewportScroller.scrollToAnchor(this.link.actionUrl);
+    }
   }
 
 }

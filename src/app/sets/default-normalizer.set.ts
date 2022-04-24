@@ -1,13 +1,14 @@
 export const DefaultNormalizerSet = new Set<string>([
     'logo',
     'bgImage',
-    'actionButton'
+    'actionButton',
 ]);
 
 export const MapNormalizerSet = new Set<string>([
     'socialMediaLinks',
     'blocks',
     'slides',
+    'categories',
 ]);
 
 export const AssetNormalizerSet = new Set<string>([

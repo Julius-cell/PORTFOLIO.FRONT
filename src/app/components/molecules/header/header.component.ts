@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Header } from './header.interface';
 
@@ -11,15 +11,15 @@ import { Header } from './header.interface';
     }
   `]
 })
-export class HeaderComponent implements OnChanges {
+export class HeaderComponent implements OnInit {
   @Input() header: Header;
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.header) {      
-      const fields = this.header;
-    }
+  ngOnInit(): void {
+    // console.log(this.header);
   }
+
+
 
 }

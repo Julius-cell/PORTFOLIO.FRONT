@@ -4,9 +4,11 @@
             [image]="header.logo"
         ></app-image>
     </div>
-    <div class="flex">
+    <div class="flex" *ngIf="header.categories">
         <div *ngFor="let categorie of header?.categories" class="m-auto lg:mx-30">
-            <p>{{categorie}}</p>
+            <app-link
+              [link]="categorie"
+            ></app-link>
         </div>
     </div>
 </div>

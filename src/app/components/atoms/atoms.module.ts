@@ -7,6 +7,7 @@ import { ImageComponent } from './image/image.component';
 import { PipeModule } from 'src/app/pipes/pipe.module';
 import { ButtonComponent } from './button/button.component';
 import { LinkComponent } from './link/link.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { LinkComponent } from './link/link.component';
   ],
   imports: [
     CommonModule,
-    PipeModule
+    PipeModule,
+    RouterModule
   ],
   exports: [
     IconComponent,
     RichTextComponent,
     ImageComponent,
     ButtonComponent,
+    LinkComponent,
   ]
 })
 export class AtomsModule { }

@@ -1,4 +1,4 @@
-<section [style]="setSpacing()">
+<section [style]="setSpacing()" [id]="section?.title?.toLocaleLowerCase()">
     <div class="title" *ngIf="section?.title">
         <h1>{{section?.title}}</h1>
     </div>

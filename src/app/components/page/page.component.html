@@ -1,12 +1,12 @@
 <div class="page">
 
-  <div [ngStyle]="{'z-index': 10}">
-    <app-header [header]="(page | async)?.header"></app-header>
+  <div [ngStyle]="{'z-index': 10}" *ngIf="(page | async)?.header as header">
+    <app-header [header]="header"></app-header>
   </div>
 
-  <main *ngIf="page | async">
+  <main *ngIf="(page | async)?.blocks as blocks">
 
-    <ng-container *ngFor="let block of (page | async)?.blocks" [ngSwitch]="block?.contentTypeId">
+    <ng-container *ngFor="let block of blocks" [ngSwitch]="block?.contentTypeId">
       <ng-container *ngSwitchCase="ContentType.SWIPER">
         <app-swiper [swiper]="block"></app-swiper>
       </ng-container>

@@ -17,7 +17,7 @@ export class SectionComponent implements OnInit {
   constructor() { }
   
   ngOnInit(): void {
-    console.log(this.section);
+    // console.log(this.section);
   }
 
   setSpacing(): any {

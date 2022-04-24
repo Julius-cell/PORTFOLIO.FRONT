@@ -6,6 +6,7 @@ import { RichTextComponent } from './rich-text/rich-text.component';
 import { ImageComponent } from './image/image.component';
 import { PipeModule } from 'src/app/pipes/pipe.module';
 import { ButtonComponent } from './button/button.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ButtonComponent } from './button/button.component';
     RichTextComponent,
     ImageComponent,
     ButtonComponent,
+    LinkComponent,
   ],
   imports: [
     CommonModule,

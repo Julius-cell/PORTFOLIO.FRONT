@@ -1,5 +1,19 @@
-<p>{{card.title}}</p>
-<app-rich-text [richText]="card.content"></app-rich-text>
+<!-- <p>{{card.title}}</p>
+<app-rich-text [richText]="card.content"></app-rich-text> -->
 <app-button
     [button]="card.actionButton"
 ></app-button>
+<div class="wrapper-card">
+    <div *ngIf="card.title">
+        <h3>{{card?.title}}</h3>
+    </div>
+    <div *ngIf="card.subTitle">
+        <p>{{card?.subTitle}}</p>
+    </div>
+    <div *ngIf="card.content">
+      <app-rich-text [richText]="card.content"></app-rich-text>
+    </div>
+    <div *ngIf="card.link">
+        <p>{{card?.link}}</p>
+    </div>
+</div>

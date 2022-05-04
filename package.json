@@ -1,6 +1,6 @@
 {
   "name": "portfolio-contentful",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -21,6 +21,7 @@
     "@contentful/rich-text-html-renderer": "^15.11.1",
     "contentful": "^9.1.12",
     "rxjs": "~6.6.0",
+    "swiper": "^8.1.4",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

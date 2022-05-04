@@ -1,5 +1,12 @@
-<!-- <div class="w-full h-full flex flex-col" [style.min-height]="'350px'">
-    <img src="{{banner.bgImage.desktopImage.url}}" alt="{{banner.bgImage.desktopImage.title}}">
-    <p>{{banner.title}}</p>
-</div> -->
-<p>banner works!</p>
+<div 
+  [style.min-height]="'350px'"
+  [style.background-image]="
+    (banner?.bgImage?.desktopImage?.url || banner?.bgImage?.mobileImage?.url) &&
+    (isMobile && banner?.bgImage?.mobileImage?.url
+      ? 'url(' + banner?.bgImage?.mobileImage?.url + ')'
+      : 'url(' + banner?.bgImage?.desktopImage?.url + ')')
+    "
+>
+
+</div>
+<!-- <p>banner works!</p> -->

@@ -9,4 +9,5 @@ export enum ContentType {
   LINK = 'link',
   SECTION = 'section',
   SWIPER = 'swiper',
+  CATEGORY_ICON = 'categoryIcon'
 }

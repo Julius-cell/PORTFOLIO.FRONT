@@ -6,3 +6,24 @@
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: "DroidSerif";
+  src: local("DroidSerif"), url(./assets/fonts/DroidSerif/DroidSerif.ttf) format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DroidSerif";
+  src: local("DroidSerif"), url(./assets/fonts/DroidSerif/DroidSerif-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DroidSerif";
+  src: local("DroidSerif"), url(./assets/fonts/DroidSerif/DroidSerif-Italic.ttf) format("truetype");
+  font-style: italic
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&display=swap');

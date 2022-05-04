@@ -1,8 +1,5 @@
 .page {
-    background: #560BAD;
-    background: rgb(38,2,2);
-    background-image: linear-gradient( 109.6deg,  rgba(38,2,2,1) 20%, rgba(166,15,15,1) 70%, rgb(10, 1, 1) 120% );
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

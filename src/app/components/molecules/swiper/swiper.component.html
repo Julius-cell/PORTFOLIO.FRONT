@@ -1,32 +1,30 @@
-<section>
-    <app-icon 
-        class="icon-left" 
-        [icon]="Icon.CHEVRON_LEFT" 
-        [color]="Color.WHITE" 
-        [ngClass]="{'hide-icon': showLeftIcon()}"
-        (click)="prevImage()"
-    ></app-icon>
-    <app-icon 
-        class="icon-right" 
-        [icon]="Icon.CHEVRON_RIGHT" 
-        [color]="Color.WHITE" 
-        [ngClass]="{'hide-icon': showRightIcon()}"
-        (click)="nextImage()"
-    ></app-icon>
-    <div class="carrousel-container" [style]="setStyles()">
-        <img 
-            *ngFor="let image of swiper.slides; let i=index"
-            src="{{image.bgImage.desktopImage.url}}" 
-            alt="{{image.bgImage.desktopImage.title}}"
-            [ngClass]="{'img-active': selectedIndex === i}"
-            class="fade"
-        >
-        <div *ngIf="swiper.indicators" class="dots">
-            <div *ngFor="let dot of swiper.slides; let i=index"
-                class="dot"
-                [ngClass]="{'active-dot': selectedIndex === i}"
-                (click)="selectImage(i)">
-            </div>
-        </div>
-    </div>
+<section class="swiper-container">
+
+  <swiper 
+    (swiper)="initSwiper($event)" 
+    [direction]="'horizontal'" 
+    [loop]="true" 
+    [autoplay]="true"
+    style="--swiper-pagination-color: #fff" 
+    [pagination]="{ 
+      dynamicBullets: true,
+      clickable: true
+    }"
+  >
+    <ng-template swiperSlide *ngFor="let slide of swiper?.slides">
+      <ng-container [ngSwitch]="slide.contentTypeId">
+        
+        <app-banner 
+          *ngSwitchCase="ContentType.BANNER" 
+          [banner]="slide"
+        ></app-banner>
+        <app-category-icon 
+          *ngSwitchCase="ContentType.CATEGORY_ICON" 
+          [categoryIcon]="slide"
+        ></app-category-icon>
+
+      </ng-container>
+    </ng-template>
+  </swiper>
+
 </section>

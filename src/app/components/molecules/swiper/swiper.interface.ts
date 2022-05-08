@@ -4,8 +4,12 @@ export interface Swiper {
     slides: any[];
     slidesPerViewDesktop: number;
     slidesPerViewMobile: number;
-    spaceBetween: string;
+    spaceBetween: number;
+    speed: number;
     isFullScreen: boolean;
     height: string;
     indicators: boolean;
+    loop: boolean;
+    pausedTime?: number;
+    autoplayDelay?: number;
 }

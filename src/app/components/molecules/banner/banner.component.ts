@@ -8,10 +8,11 @@ import { Banner } from './banner.interface';
 })
 export class BannerComponent implements OnInit {
   @Input() banner: Banner;
+  @Input() isMobile: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.banner);
+    console.log(this.banner);
   }
 }

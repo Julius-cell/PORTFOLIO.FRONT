@@ -2,6 +2,7 @@ export const DefaultNormalizerSet = new Set<string>([
     'logo',
     'bgImage',
     'actionButton',
+    'cta'
 ]);
 
 export const MapNormalizerSet = new Set<string>([

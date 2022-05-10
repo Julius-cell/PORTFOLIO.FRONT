@@ -5,6 +5,12 @@
     min-height: 100vh;
 }
 
+.header {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
 app-footer {
     margin-top: auto;
 }

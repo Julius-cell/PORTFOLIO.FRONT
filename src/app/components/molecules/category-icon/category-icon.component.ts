@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CardIcon } from './category-icon.interface';
+
+import { Image } from '../../atoms/image/image.interface';
 
 @Component({
   selector: 'app-category-icon',
@@ -7,10 +8,7 @@ import { CardIcon } from './category-icon.interface';
   styleUrls: ['./category-icon.component.css']
 })
 export class CardIconComponent implements OnInit {
-
-  @Input() categoryIcon: CardIcon;
-
-  baseLinkClass = `font-open block text-center text-14 md:text-16 font-normal`;
+  @Input() categoryIcon: Image;
 
   constructor() { }
 
@@ -19,14 +17,7 @@ export class CardIconComponent implements OnInit {
   }
 
   handleClick(): void {
-    // const { actionUrl, actionType } = this.cardIcon?.link;
-    // switch (actionType) {
-    //   case ActionTypeEnum.OPEN_URL:
-    //     window.open(actionUrl, TargetEnum._BLANK);
-    //     break;
-    //   case ActionTypeEnum.NAVIGATE:
-    //     window.open(actionUrl, TargetEnum._SELF);
-    //     break;
-    // }
+    const { actionUrl, actionType } = this.categoryIcon;
+    window.open(actionUrl, actionType);
   }
 }

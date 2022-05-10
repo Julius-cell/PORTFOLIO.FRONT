@@ -1,12 +1,19 @@
 <div 
-  [style.min-height]="'350px'"
   [style.background-image]="
     (banner?.bgImage?.desktopImage?.url || banner?.bgImage?.mobileImage?.url) &&
     (isMobile && banner?.bgImage?.mobileImage?.url
       ? 'url(' + banner?.bgImage?.mobileImage?.url + ')'
       : 'url(' + banner?.bgImage?.desktopImage?.url + ')')
     "
+  [ngClass]="banner.isFullScreen ? 'banner-full-screen' : 'banner-normal'"
+  [class]="extraClass"
 >
-
+  <div *ngIf="banner?.isFullScreen" class="banner-wrapper">
+    <h1>{{ banner?.title }}</h1>
+    <div *ngIf="banner?.cta" class="banner-cta">
+      <app-button
+      [button]="banner?.cta"
+      ></app-button>
+    </div>
+  </div>
 </div>
-<!-- <p>banner works!</p> -->

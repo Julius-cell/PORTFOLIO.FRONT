@@ -6,10 +6,7 @@ export interface Swiper {
     slidesPerViewMobile: number;
     spaceBetween: number;
     speed: number;
-    isFullScreen: boolean;
+    isFullWidth: boolean;
     height: string;
-    indicators: boolean;
     loop: boolean;
-    pausedTime?: number;
-    autoplayDelay?: number;
 }

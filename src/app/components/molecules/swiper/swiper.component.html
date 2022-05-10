@@ -2,14 +2,8 @@
 
   <swiper 
     (swiper)="initSwiper($event)" 
-    [direction]="'horizontal'" 
-    [loop]="true" 
-    [autoplay]="true"
+    [config]="config" 
     style="--swiper-pagination-color: #fff" 
-    [pagination]="{ 
-      dynamicBullets: true,
-      clickable: true
-    }"
   >
     <ng-template swiperSlide *ngFor="let slide of swiper?.slides">
       <ng-container [ngSwitch]="slide.contentTypeId">
@@ -17,9 +11,10 @@
         <app-banner 
           *ngSwitchCase="ContentType.BANNER" 
           [banner]="slide"
+          [extraClass]="'banner-extra-class'"
         ></app-banner>
-        <app-category-icon 
-          *ngSwitchCase="ContentType.CATEGORY_ICON" 
+        <app-category-icon
+          *ngSwitchCase="ContentType.IMAGE" 
           [categoryIcon]="slide"
         ></app-category-icon>
 

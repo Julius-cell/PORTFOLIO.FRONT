@@ -1,13 +1,12 @@
 <div class="flex flex-col items-center h-full cursor-pointer" (click)="handleClick()">
   <div
-    class="mb-5 w-40 h-40 border rounded-full flex items-center justify-center"
+    class="mb-5 w-70 h-70 border rounded-full flex items-center justify-center overflow-hidden"
   >
-    <!-- <img
-      *ngIf="cardIcon?.media"
-      data-src="{{ cardIcon?.media?.url }}"
-      [alt]="cardIcon?.media?.alt"
+    <img
+      *ngIf="categoryIcon?.desktopImage"
+      data-src="{{ categoryIcon?.desktopImage.url }}"
+      [alt]="categoryIcon?.desktopImage.alt"
       [class]="'lazyload'"
     />
-  </div> -->
-  <!-- <at-link *ngIf="options?.link" [options]="options.link" [extraClass]="linkExtraClass"></at-link> -->
+  </div>
 </div>

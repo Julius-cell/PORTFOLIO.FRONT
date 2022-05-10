@@ -1,6 +1,6 @@
 <div class="page">
 
-  <div [ngStyle]="{'z-index': 10}" *ngIf="(page | async)?.header as header">
+  <div class="header" *ngIf="(page | async)?.header as header">
     <app-header [header]="header"></app-header>
   </div>
 

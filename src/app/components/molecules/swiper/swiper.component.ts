@@ -5,7 +5,7 @@ import { ContentType } from 'src/app/shared/enums/contentType';
 import { Icon } from '../../atoms/icon/icon.enum';
 import { Swiper } from './swiper.interface';
 
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay, SwiperOptions } from 'swiper';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -28,91 +28,81 @@ export class SwiperComponent implements OnInit {
   isBeginning = true;
   isEnd = false;
 
+  config: SwiperOptions;
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.swiper);
+    // console.log(this.swiper);
+    this.setSwiperConfig();
+  }
+
+  setSwiperConfig(): void {
+    this.setSwiperBannerConfig();
+    this.setSwiperImageConfig();
+  }
+
+  setSwiperBannerConfig(): void {
+    if (this.swiper.slides.every(el => el.contentTypeId === ContentType.BANNER)) {
+      this.config = {
+        loop: this.swiper?.loop,
+        autoplay: true,
+        speed: this.swiper?.speed,
+        slidesPerView: this.swiper?.slidesPerViewDesktop,
+        pagination: { clickable: true, dynamicBullets: true },
+      }
+    }
+  }
+
+  setSwiperImageConfig(): void {
+    if (this.swiper?.slides.every(el => el.contentTypeId === ContentType.IMAGE)) {
+      this.config = {
+        slidesPerView: this.swiper?.slidesPerViewDesktop,
+        spaceBetween: this.swiper?.spaceBetween,
+        slidesPerGroup: 1,
+        speed: this.swiper?.speed,
+        loop: this.swiper?.loop,
+        loopFillGroupWithBlank: true,
+      }
+    }
   }
 
   initSwiper(swiper: any) {
-    console.log(swiper);
+    // console.log(swiper);
     this.swiperElement = swiper;
     if (this.swiper?.slides && this.swiper?.slides?.length) {
-      this.getPaginationBullets();
+      // this.getPaginationBullets();
     }
   }
 
-  getPaginationBullets(): void {
-    const lengthDesktop =
-      this.swiper?.slides?.length - Math.floor(this.swiper?.slidesPerViewDesktop) + 1;
-    this.paginationBulletsDesktop = new Array(Math.max(lengthDesktop, 0));
-  }
-
-  handleStopAutoplay(): void {
-    this.timeoutAutoplay = setTimeout(() => {
-      if (this.swiperElement && this.swiperElement.autoplay) {
-        this.swiperElement.autoplay.start();
-      }
-    }, this.swiper?.pausedTime);
-  }
-
-  handleClickNext(): void {
-    if (!this.isEnd || this.swiper?.loop) {
-      this.swiperElement.slideNext(this.swiper?.speed);
-    }
-  }
-
-  handleClickPrev(): void {
-    if (!this.isBeginning || this.swiper?.loop) {
-      this.swiperElement.slidePrev(this.swiper?.speed);
-    }
-  }
-
-  onSlideChange() {
-    console.log('slide change');
-  }
-
-
-
-  setHeight(): string {
-    return this.swiper.isFullScreen ? '100vh' : `${this.swiper.height}px`;
-  }
-
-  setMarginTop(): string {
-    return this.swiper.isFullScreen ? '-80px' : `0px`;
-  }
-
-  showIconNavigators(): boolean {
-    return this.swiper.slides.length > 1;
-  }
-
-  showLeftIcon(): boolean {
-    return this.selectedIndex === 0 || !this.showIconNavigators();
-  }
-  
-  showRightIcon(): boolean {
-    return this.selectedIndex === this.swiper.slides.length - 1 || !this.showIconNavigators();
-  }
-
-  setStyles(): any {
-    return {
-      height: this.setHeight(),
-      marginTop: this.setMarginTop(),
-      width: '100%',
-    }
-  }
-
-  selectImage(index: number): void {
-    this.selectedIndex = index;
-  }
-
-  // nextImage(): void {
-  //   this.selectedIndex = this.selectedIndex + 1;
-  // }
-  
-  // prevImage(): void {
-  //   this.selectedIndex = this.selectedIndex - 1;
+  // getPaginationBullets(): void {
+  //   const lengthDesktop =
+  //     this.swiper?.slides?.length - Math.floor(this.swiper?.slidesPerViewDesktop) + 1;
+  //   this.paginationBulletsDesktop = new Array(Math.max(lengthDesktop, 0));
   // }
 
+  // handleStopAutoplay(): void {
+  //   this.timeoutAutoplay = setTimeout(() => {
+  //     if (this.swiperElement && this.swiperElement.autoplay) {
+  //       this.swiperElement.autoplay.start();
+  //     }
+  //   }, this.swiper?.pausedTime);
+  // }
+
+  // handleClickNext(): void {
+  //   if (!this.isEnd || this.swiper?.loop) {
+  //     this.swiperElement.slideNext(this.swiper?.speed);
+  //   }
+  // }
+
+  // handleClickPrev(): void {
+  //   if (!this.isBeginning || this.swiper?.loop) {
+  //     this.swiperElement.slidePrev(this.swiper?.speed);
+  //   }
+  // }
+
+  // onSlideChange() {
+  //   console.log('slide change');
+  // }
 
 }
